@@ -1,16 +1,10 @@
 ## Director
-Cocos2d-x uses the concept of a `Director`, just like in a movie! The `Director`
-controls the flow of operations and tells the necessary recipient what to do.
-Think of yourself as the _Executive Producer_ and you tell the `Director` what
-to do! One common `Director` task is to control `Scene` replacements and
-transitions. The `Director` is a shared singleton (effectively, there's only one
-instance of the class at a time) object that you can call from anywhere in your
-code.
+Cocos2d-x는 영화 속처럼 `감독`의 개념을 사용한다.
 
-Here is an example of a typical game flow. The `Director` takes care of
-transitioning through this as your game criteria decides:
+Cocos2d-x uses the concept of a `Director`, just like in a movie! `감독`은 운영 흐름을 통제하고 필요한 작업자에게 무엇을 해야 할지를 지시한다. 스스로를 _제작책임자_라고 생각하고 `감독`에게 뭘 해야하는 말하라. `장면`을 전환하거나 교체하는 것은 `감독`의 흔한 업무 중 하나이다. `감독`은 코드의 어느 곳에서든 호출할 수 있는 공유된 단일 개체(실제로, 하나의 인스턴스만 존재한다.) 입니다.
+
+여기 전형적인 게임 흐름의 예가 있다. `감독`은 게임의 기준을 통해 전환하는 것을 관리한다:
 
 ![](basic_concepts-img/scenes.png "")
 
-You are the director of your game. You decide what happens, when and how.
-Take charge!
+당신이 게임의 감독이다. 어떤 일이 언제 어떻게 일어날지 결정하고 담당하라!
