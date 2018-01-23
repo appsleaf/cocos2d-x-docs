@@ -1,7 +1,7 @@
 ## Logging as a way to output messages
-Sometimes, when your app is running, you might wish to see messages being written
-to the console for informational or debug purposes. This is built into the
-engine, using __log()__. Example:
+때때로 앱이 실행 중일 때 정보 또는 디버그 목적으로 콘솔에 메시지가 기록되는 것을 보고 싶을 수 있다. 엔진에 내장된 __log()__ 를 이용하면 된다. 
+
+예:
 
 {% codetabs name="C++", type="cpp" -%}
 // a simple string
@@ -31,5 +31,4 @@ else
     log("bool is false");
 {%- endcodetabs %}
 
-And, c++ users, if you prefer you can use __std::cout__ in place of __log()__,
-however, __log()__ might offer easier formatting of complex output.
+그리고 c++ 사용자는 __log()__ 대신에 __std::count__ 를 사용하는 것이 더 좋다. 하지만 __log()__ 가 복잡한 출력 형태를 쉽게 제공할 수 있다.
