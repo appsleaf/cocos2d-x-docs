@@ -1,21 +1,13 @@
 ## Sprites
-All games have `Sprite` objects, and you may or may not realize what they are.
-Sprites are the objects that you move around the screen.
-You can manipulate them. The main character in your game is probably a
-Sprite. I know what you might be thinking -  isn't every graphical object
-a `Sprite`? No! Why? Well a Sprite is only a Sprite if you move it around. If you don't move it around it is just a `Node`.
+모든 게임은 `Sprite` 객체를 가지고 있고, 그것이 무엇인지 알지 못할 수도 있다. 스프라이트는 화면에서 움직이는 객체이다. 조작할 수 있다. 게임의 주인공은 아마도 스프라이트일 것이다. 모든 사물이 `스프라이트`가 아닌가요? 라고 생각한다는 것을 알고 있다. 아니다! 왜? 스프라이트는 움직일 때만 스프라이트이다. 만약 움직이지 않는다면 그것은 단지 `Node`일뿐이다.
 
-Taking another look at the image from above, let's point out what are
-Sprites and what are Nodes:
+위에서 본 이미지를 다시 살펴 보고, 스프라이트가 무엇이고 노드가 무엇인지 언급해보자:
 
 ![](basic_concepts-img/2n_main_sprites_nodes.png "")
 
-Sprites are important in all games. Writing a platformer, you probably have
-a main character that is made by using an image of some sort. This is
-a `Sprite`.
+모든 게임에서 스프라이트는 중요하다. 게임 제작사에서 작성한 어떤 종류의 이미지를 사용하여 만들어진 주인공을 아마도 가지고 있을 것이다. `Sprite`이다.
 
-`Sprites` are easy to create and they have configurable properties
-like: __position__, __rotation__, __scale__, __opacity__, __color__ and more.
+`Sprite`는 쉽게 만들 수 있고 설정 가능한 속성( __position__, __rotation__, __scale__, __opacity__, __color__ 등과 같은)을 가지고 있다.
 
 {% codetabs name="C++", type="cpp" -%}
 // This is how to create a sprite
@@ -31,19 +23,17 @@ mySprite->setScale(2.0); // sets both the scale of the X and Y axis uniformly
 mySprite->setAnchorPoint(Vec2(0, 0));
 {%- endcodetabs %}
 
-Let's illustrate each property, consider the following screenshot from
-the example code for this chapter:
+각 속성을 설명하고, 스크린샷으로부터 이 장의 예제 코드를 살펴 보도록 하자:
 
 ![](basic_concepts-img/2n_level1_action_start.png "")
 
-If we set the position using `mySprite->setPosition(Vec2(500, 0));`:
+다음을 사용하여 위치를 설정하는 경우 `mySprite->setPosition(Vec2(500, 0));`:
 
 ![](basic_concepts-img/2n_level1_action_end.png "")
 
-Note that the `Sprite` position has changed from its original position to the
-new position that we specified.
+`스프라이트`의 위치가 원래 위치에서 우리가 지정한 새 위치로 바뀌었다.
 
-If we now set a new rotation, using `mySprite->setRotation(40);`:
+이제 다음을 사용하여 새 회전을 설정할 경우 `mySprite->setRotation(40);`:
 
 ![](basic_concepts-img/2n_level1_action_end_rotation.png "")
 
