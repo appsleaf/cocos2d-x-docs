@@ -1,11 +1,8 @@
-## Creating Sprites
-There are different ways to create Sprites depending upon what you need to
-accomplish. You can create a `Sprite` from an image with various graphic formats
-including: __PNG__, __JPEG__, __TIFF__, and others. Let's go through some create methods and
-talk about each one.
+## Sprites 만들기
+필요에 따라 여러가지 방법으로 sprite 를 만들 수 있습니다. __PNG__, __JPEG__, __TIFF__ 등을 포함한 다양한 그래픽 포맷의 이미지로부터 `스프라이트` 를 만들 수 있다. 몇 가지 방법을 통해 메소드를 생성하고 각각에 대해 이야기 해 보자.
 
-### Creating a Sprite
-A `Sprite` can be created by specifying an image file to use.
+### 스프라이트 만들기
+`스프라이트` 사용할 이미지 파일을 지정해서 만들 수 있다
 
 {% codetabs name="C++", type="cpp" -%}
 auto mySprite = Sprite::create("mysprite.png");
@@ -13,17 +10,13 @@ auto mySprite = Sprite::create("mysprite.png");
 
 ![](sprites-img/i1.png "")
 
-The statement above creates a `Sprite` using the __mysprite.png__ image. The result
-is that the created `Sprite` uses the whole image. `Sprite` has the same dimensions
-of __mysprite.png__. If the image file is 200 x 200 the resulting `Sprite` is 200 x 200.
+위의 그림은 __mysprite.png__ 를 이용해서 `Sprite` 를 만들었다. 전체 이미지를 사용해 `스프라이트` 를 만든 결과이다. `Sprite` 는 __mysprite.png__ 와 크기가 같다. 만약 이미지 파일 크기가 200 x 200 라면 `Sprite` 도 200 x 200 로 같은 결과를 나타낸다.
 
-### Creating a Sprite with a Rect
+### 사각형이 있는 스프라이트 만들기
 
-In the previous example, the created `Sprite` has the same size as the original
-image file. If you want to create a `Sprite` with only a certain portion of the
-image file, you can do it by specifying a `Rect`.
+앞에 예제에서, 만들어진 `Sprite` 는 원본 이미지 파일의 크기와 동일하다. `Sprite` 가 이미지 파일의 특정 부분만으로 만들어지길 원한다면, `Rect` 를 지정하면 된다.
 
-`Rect` has 4 values: __origin x__, __origin y__, __width__ and __height__.
+`Rect` 는 4개의 값을 갖는다: __원본 x__, __원본 y__, __폭__ 과 __높이__
 
 {% codetabs name="C++", type="cpp" -%}
 auto mySprite = Sprite::create("mysprite.png", Rect(0,0,40,40));
@@ -31,15 +24,9 @@ auto mySprite = Sprite::create("mysprite.png", Rect(0,0,40,40));
 
 ![](sprites-img/i4.png "")
 
-`Rect` starts at the top left corner. This is the opposite of what you might be
-used to when laying out screen position as it starts from the lower left corner.
-Thus the resulting `Sprite` is only a portion of the image file. In this case the
-`Sprite` dimension is 40 x 40 starting at the top left corner.
+`Rect` 은 왼쪽 위 모서리에서 시작한다. 이는 왼쪽 밑 모서리에서 시작하는 화면 위치 레이아웃과 정반대이다. 따라서 결과로 나오는 `Sprite` 는 이미지 파일의 일부분이다. 이 경우 `Sprite` 의 크기는 왼쪽 위 모서리부터 시작하여 40x40 이다. 
 
-If you don't specify a `Rect`, Cocos2d-x will automatically use the full width
-and height of the image file you specify. Take a look at the example below. If
-we use an image with dimensions 200 x 200 the following 2 statements would have
-the same result.
+만약 `Rect` 을 지정하지 않으면, Cocos2d-x 는 자동으로 지정된 이미지의 폭과 높이의 전체를 사용한다. 아래 예를 살펴보자. 만약 200 x 200 크기의 이미지를 사용한다면, 다음의 2개의 명령문은 동일한 결과를 갖는다.
 
 {% codetabs name="C++", type="cpp" -%}
 auto mySprite = Sprite::create("mysprite.png");

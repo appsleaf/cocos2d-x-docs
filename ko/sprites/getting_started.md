@@ -1,3 +1,2 @@
-## What are Sprites
-A Sprite is a 2D image that can be animated or transformed by changing its
-properties, including __rotation__, __position__, __scale__, __color__, etc.
+## Sprites는 무엇인가
+스프라이트는 2D 이미지이다. __회전__, __위치__, __크기__, __색상__ 등의 속성을 변경하여 움직이거나 변형시킬 수 있다.

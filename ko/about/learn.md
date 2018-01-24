@@ -1,5 +1,5 @@
-## Learning Resources
-* This very guide!
+## 학습 자원
+* 이게 가이드야!
 * [__Android Fundamentals__](https://developer.android.com/guide/components/fundamentals.html)
 
 
