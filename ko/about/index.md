@@ -1,6 +1,4 @@
-## What is Cocos2d-x?
+## Cocos2d-x 는 무엇인가?
 
-## About Cocos2d-x
-Started in 2010, Cocos2d-x is an open source, cross-platform game engine. It is
-loaded with powerful features that allows developers to create spectacular games
-with ease.
+## Cocos2d-x 에 대해여
+Cocos2d-x는 2010년에부터 시작된 크로스-플랫폼 오픈 소스 게임엔진이다. 개발자가 멋진 게임을 쉽게 만들 수 있도록 강력한 기능이 탑재되어 있다.

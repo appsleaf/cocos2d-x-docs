@@ -33,44 +33,32 @@ mySprite->setAnchorPoint(Vec2(0, 0));
 
 `스프라이트`의 위치가 원래 위치에서 우리가 지정한 새 위치로 바뀌었다.
 
-이제 다음을 사용하여 새 회전을 설정할 경우 `mySprite->setRotation(40);`:
+다음을 사용하여 새 회전을 설정할 경우 `mySprite->setRotation(40);`:
 
 ![](basic_concepts-img/2n_level1_action_end_rotation.png "")
 
-... you can see that the `Sprite` has been rotated to the new amount that was
-specified.
+... `Sprite` 가 지정된 새로운 크기로 회전되었음을 볼 수 있다.
 
-If we now specify a new scale using `mySprite->setScale(2.0);`:
+다음을 사용하여 크기를 설정할 경우 `mySprite->setScale(2.0);`:
 
 ![](basic_concepts-img/2n_level1_action_end_scale.png "")
 
-Again, we can see that the `Sprite` now has changed according to our code
-changes.
+다시 한번, `Sprite` 가 변경된 코드에 맞게 변경되어진 것을 볼 수 있다.
 
-Lastly, all `Node` objects (since a `Sprite` is a subclass of `Node`) have a
-value for __anchor point__. We haven't talked about this yet, so now is a good
-time. You can think of __anchor point__ as a way of specifying what part of the
-sprite will be used as a base coordinate when setting the position of it.
+마지막으로 모든 `Node` 객체는 (`Sprite` 도 `Node` 의 하위클래스이다) __anchor point__ 값을 가진다. 아직까지는 앵커 포인트에 대해 이야기하지 않았지만, 이제 이야기할 시간이 되었다. __anchor point__ 는 위치를 설정할 때 스프라이트의 부분이 기준 좌표로 사용되어 지정되는 방법이라고 생각할 수 있다.
 
-Using the character from our example game, and setting the anchor point to
-__0, 0__ using:
+예제 게임의 케릭터에 사용된 앵커포인트는 __0, 0__ 으로 설정되어 있다: 
 
 {% codetabs name="C++", type="cpp" -%}
 mySprite->setAnchorPoint(Vec2(0, 0));
 {%- endcodetabs %}
 
-would result in the lower left corner of our sprite being used as the basis for
-any __setPosition()__ call. Let's see a few of these in action:
+스프라이트의 좌측 아래 모서리가 선언된 __setPosition()__ 함수의 기준으로 사용된다. 몇가지 실제 작동하는 모습을 보자:
 
 ![](basic_concepts-img/2n_level1_anchorpoint_0_0.png "") ![](basic_concepts-img/smallSpacer.png "") ![](basic_concepts-img/2n_level1_anchorpoint_05_05.png "") ![](basic_concepts-img/smallSpacer.png "") ![](basic_concepts-img/2n_level1_anchorpoint_1_1.png "")
 
-Take a look at the red dot in each picture. This red dot illustrates where
-the anchor point is!
+각각의 사진에 빨간점을 살펴보자. 빨간점은 앵커포인트를 보여준다.
 
-As you can see __anchor point__ is very useful when positioning `Nodes`. You
-can even adjust the __anchor point__ dynamically to simulate effects in your
-game.
+보는 것과 같이 __anchor point__ 는 `Nodes` 의 위치를 지정할 때 매우 유용하다. 심지어 게임의 효과를 시뮬레이션하기 위해 동적으로 __anchor point__ 을 조정할 수도 있습니다.
 
-We really can tweak just about every aspect of the `Sprite`. But, what if we
-wanted to have these same types of changes occur in an automated, time
-determined manner? Well, keep reading...
+우리는 정말로 스프라이트의 모든 면을 조정할 수 있습니다. 그런데 만약 동일한 유형의 변경이 시간 결정 방식에 따라 자동으로 발생되길 원한다면 어떻게해야하나? 그럼, 계속 읽어보라...

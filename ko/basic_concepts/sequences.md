@@ -1,18 +1,14 @@
 ## Sequences and Spawns
-With moving `Sprite` objects on the screen we have everything we need to create
-our game, right? Not quite. What about running multiple __Actions__? Yes,
-Cocos2d-x handles this too in a few different ways.
 
-Just like it sounds, a `Sequence` is multiple `Action` objects run in a specified
-order. Need to run the `Sequence` in reverse? No problem, Cocos2d-x handles
-this with no additional work.
+화면에서 `Sprite` 객체를 움직이면 게임을 만드는데 필요한 모든 것을 갖게 된다. 그런가? 아직은 아니다. 여러 개의 __동작__ 을 실행하면 어떨까? 맞다, Cocos2d-x 에서는 좀 다르게 처리한다.
 
-Take a look at the flow of an example `Sequence` for moving a `Sprite`
-gradually:
+이 이야기는 `Sequence` 가 여러 개의 `Action` 객체들이 지정된 순서대로 실행되는 것이다. `Sequence` 가 반대로 실행되길 원하는가? 문제없다, Cocos2d-x 는 추가 작업없이 처리한다.
+
+`Sprite` 가 차례대로 움직이는 `Sequence` 예제의 흐름을 살펴 보자:
 
 ![](basic_concepts-img/2_sequence_scaled.png "")
 
-This `Sequence` is easy to make:
+이 `Sequence` 는 쉽게 만들 수 있다.
 
 {% codetabs name="C++", type="cpp" -%}
 auto mySprite = Node::create();
@@ -29,15 +25,10 @@ auto moveTo2 = MoveTo::create(2, Vec2(150,10));
 // create a delay
 auto delay = DelayTime::create(1);
 
-mySprite->runAction(Sequence::create(moveTo1, delay, moveBy1, delay.clone(),
-moveTo2, nullptr));
+mySprite->runAction(Sequence::create(moveTo1, delay, moveBy1, delay.clone(), moveTo2, nullptr));
 {%- endcodetabs %}
 
-This example runs a `Sequence`, in order, but what about running all the
-specified __Actions__ at the same time? Cocos2d-x supports this too and it
-is called `Spawn`. `Spawn` will take all the specified `Action` objects and
-executes them at the same time. Some might be longer than others, so they won't
-all finish at the same time if this is the case.
+이 예제를 순서대로 `Sequence` 를 실행하지만, 동시에 모든 지정한 __동작들__ 을 실행할 수는 없을까? Cocos2d-x는 `Spawn` 라고 불리우는 것 역시 지원한다. `Spawn` 는 모든 지정한 `동작` 객체들을 가져와 동시에 실행한다. 일부는 다른 것보다 더 오래 실행할 수 있기때문에 동시에 끝나지 않을 것이다.
 
 {% codetabs name="C++", type="cpp" -%}
 auto myNode = Node::create();
@@ -49,7 +40,4 @@ auto moveTo2 = MoveTo::create(2, Vec2(150,10));
 myNode->runAction(Spawn::create(moveTo1, moveBy1, moveTo2, nullptr));
 {%- endcodetabs %}
 
-Why `Spawn` actions? Is there ever a reason? Sure! What if your main
-character has multiple __Actions__ when obtaining a power up? Maybe beating
-the boss at the end of a level has multiple __Actions__ that need to happen
-to end the level.
+`Spawn` 동작은 왜 필요한가? 더 이유가 있나? 물론! 만약 주인공이 파워업을 할 때 여러가지 __동작__ 을 한다면 어떻게 하겠는가? 최종보스를 잡는 것도 한 레벨을 끝내기 위해 필요한 여러가지 __동작__ 을 하는 것일지도 모른다.

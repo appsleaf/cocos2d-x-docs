@@ -1,11 +1,11 @@
 # Cocos2d-x Documentation
 
--  [Getting Started](index.md)
-    - [About Cocos2d-x](about/getting_started.md)
-    - [Why Cocos2d-x](about/why.md)
-    - [How to learn](about/learn.md)
-    - [Where to get help](about/help.md)
-    - [How to contribute](about/how.md)
+-  [시작하기](index.md)
+    - [Cocos2d-x에 대해서](about/getting_started.md)
+    - [왜 Cocos2d-x 인가?](about/why.md)
+    - [어떻게 학습하는가?](about/learn.md)
+    - [도움을 받을 수 있는 곳](about/help.md)
+    - [기여할 수 있는 방법](about/how.md)
 
 -  [Basic Cocos2d-x Concepts](basic_concepts/index.md)
     - [Main Components](basic_concepts/getting_started.md)
