@@ -1,8 +1,7 @@
-## Sprite Manipulation
-After creating a `Sprite` you will have access to a variety of properties it
-has that can be manipulated.
+## 스프라이트 조작
+`Sprite` 를 만든 후에 조작할 수 있는 다양한 특성에 접근할 수 있습니다.
 
-Given:
+다음과 같이 주어짐:
 
 {% codetabs name="C++", type="cpp" -%}
 auto mySprite = Sprite::create("mysprite.png");
@@ -10,17 +9,13 @@ auto mySprite = Sprite::create("mysprite.png");
 
 ![](sprites-img/i1.png "")
 
-### Anchor Point and Position
-__Anchor Point__ is a point that you set as a way to specify what part of
-the `Sprite` will be used when setting its position. __Anchor Point__ affects
-only properties that can be transformed. This includes __scale__, __rotation__,
-__skew__. This excludes __color__ and __opacity__. The __anchor point__ uses a
-bottom left coordinate system. This means that when specifying X and Y coordinate
-values you need to make sure to start at the bottom left hand corner to do your
-calculations. By default, all `Node` objects have a default __anchor point__ of
-is __(0.5, 0.5)__.
+### 앵커포인트와 위치
+__앵커 포인트__ 는 위치를 설정할 때 사용되어지는 `Sprite` 의 부분을 지정하여 설정하는 점이다. __앵커 포인트__ 는 변경할 
+수 있는 속성에만 영향을 받는다. __scale__ 과 __rotation__, __skew__ 은 포함되고, __color__ 과 __opacity__ 는 빠져 있다. 
+__앵커 포인트__ 는 좌측 아래인 좌표계를 사용한다. 즉, X와 Y 좌표 값을 지정할 때 왼쪽 하단 모서리에서 시작하는 걸로 
+계산해야 한다는 뜻이다. 기본적으르 모든 `Node` 객체의 __앵커 포인트__ 는 (0.5, 0.5)의 기본값을 갖는다. 
 
-Setting the __anchor point__ is easy:
+다음과 같이 __앵커 포인트__ 를 쉽게 설정할 수 있다:
 
 {% codetabs name="C++", type="cpp" -%}
 // DEFAULT anchor point for all Sprites
@@ -39,36 +34,33 @@ mySprite->setAnchorPoint(1, 0);
 mySprite->setAnchorPoint(1, 1);
 {%- endcodetabs %}
 
-To represent this visually:
+다음과 같이 시각적으로 표현할 수 있다:
 
 ![](sprites-img/i6.png "")
 
-### Sprite properties effected by anchor point
-Using __anchor point__ effects only properties that can be transformed. This includes
-__scale__, __rotation__, __skew__.
+###  앵커 포인트의 영향을 받는 스프라이트 속성
+__앵커 포인트__ 사용은 변경 가능한 속성에만 적용된다. __scale__, __rotation__, __skew__ 이 포함된다.
 
-#### Position
-A __sprite's__ position is affected by its __anchor point__ as it is this point
-that is used as a starting point for positioning. Let's visually look at how this
-happens. Notice the colored line and where the _sprite's_ position is in relation
-to it. Notice, as we change the __anchor point__ values, the _sprite's_ position
-changes. It is important to note that all it took was changing the __anchor point__
-value. We did not use a `setPosition()` statement to achieve this:
+#### 위치
+__스프라이트__ 의 위치는 __앵커 포인트__ 의 영향을 받는다. 이 점을 위치 지정을 위한 시작점으로 사용되기 때문입니다. 
+어떻게 발생되는지 시작적으로 살펴보자. 색상이 지정된 선과 이에 대한 _스프라이트_ 의 위치를 살펴보자.
+__앵커 포인트__ 값이 변경되면 _스트라이트_ 의 값도 변경되는지 살펴보자. __앵커 포인트__ 값이 변경되면 다른 것들도 변경된
+다는 것을 유의하자. 이를 확인하기 위해 `setPosition()` 를 사용하지 않았다.
 
 ![](sprites-img/i9.png "")
 
-There are more ways to set position than just __anchor point__. `Sprite` objects
-can also be set using the `setPosition()` method.
+여기 __anchor point__ 만을 가지고 위치를 설정할 수 다른 방법도 있다. 
+`Sprite` 객체는 `setPosition()` 메소드를 이용해 설정 할 수 있다
 
 {% codetabs name="C++", type="cpp" -%}
 // position a sprite to a specific position of x = 100, y = 200.
 mySprite->setPosition(Vec2(100, 200));
 {%- endcodetabs %}
 
-#### Rotation
-Changes the __sprite's__ rotation, by a positive or negative number of degrees.
-A positive value rotates the `Sprite` object clockwise, while a negative value
-rotates the `Sprite` object counter-clockwise. The default value is __0__.
+#### 회전
+__스프라이트__ 의 음수 또는 양수의 크기로 회전할 수 있다.
+양수값은 `Sprite` 객체를 시계방향으로 회전 시키고, 반명 음수값은 `Sprite` 객체를 시계반대 방향으로 회전 시킨다.
+기본값은 __0__ 이다.  
 
 {% codetabs name="C++", type="cpp" -%}
 // rotate sprite by +20 degrees
@@ -86,9 +78,9 @@ mySprite->setRotation(-60.0f);
 
 ![](sprites-img/i8.png "")
 
-#### Scale
-Changes the __sprite's__ scale, either by x, y or uniformly for both x and y.
-The default value is 1.0 for both x and y.
+#### 크기
+__스프라이트__ 의 x, y 각각 다르게하거나  같은 비율로 크기를 변경할 수 있다. 
+기본값은 x와 y 둘다 1.0 이다.
 
 {% codetabs name="C++", type="cpp" -%}
 // increases X and Y size by 2.0 uniformly
@@ -103,9 +95,9 @@ mySprite->setScaleY(2.0);
 
 ![](sprites-img/i5.png "")
 
-#### Skew
-Changes the __sprite's__ skew, either by x, y or uniformly for both x and y.
-The default value is 0,0 for both x and y.
+#### 기울임
+__스프라이트__ 의 x, y 각각 다르게하거나  같은 비율로 기울기를 변경할 수 있다.
+기본값은 x와 y 둘다 0,0 이다
 
 {% codetabs name="C++", type="cpp" -%}
 // adjusts the X skew by 20.0
